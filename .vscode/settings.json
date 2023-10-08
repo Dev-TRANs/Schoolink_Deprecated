@@ -1,0 +1,6 @@
+{
+    "[svelte]": {
+        "editor.tabSize": 2
+    },
+    "svg.preview.background": "transparent"
+}
