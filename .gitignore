@@ -13,3 +13,5 @@ vite.config.ts.timestamp-*
 
 # Cache Dir
 __pycache__
+
+dist/

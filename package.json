@@ -8,12 +8,14 @@
     "dev": "bun run front:dev & poetry run python3 run.py dev",
     "build": "vite build",
     "preview": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "start": "poetry run python3 run.py"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.0.0-next.0",
     "@tsconfig/svelte": "^5.0.2",
     "autoprefixer": "^10.4.16",
+    "bun-types": "^1.0.5-canary.20231007T140129",
     "postcss": "^8.4.31",
     "svelte": "^4.2.1",
     "svelte-check": "^3.5.2",
