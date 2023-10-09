@@ -1,17 +1,21 @@
-.DS_Store
-node_modules
-/front/build
-/front/.svelte-kit
-/front/package
-.env
-.env.*
-!.env.example
-.vercel
-.output
-vite.config.js.timestamp-*
-vite.config.ts.timestamp-*
-
-# Cache Dir
-__pycache__
-
+# build output
 dist/
+
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
