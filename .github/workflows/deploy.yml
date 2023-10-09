@@ -25,6 +25,8 @@ jobs:
         run: bun i
       - name: Build
         run: bun run build
+      - name: Remove node_modules
+        run: rm -rf node_modules
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
