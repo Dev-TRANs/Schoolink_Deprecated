@@ -1,0 +1,35 @@
+name: Deploy
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write # Needed for auth with Deno Deploy
+      contents: read # Needed to clone the repository
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: Install deps
+        run: bun i
+      - name: Build
+        run: bun run build
+      - name: Remove node_modules
+        run: rm -rf node_modules
+      - name: Upload to Deno Deploy
+        uses: denoland/deployctl@v1
+        with:
+          project: "schoolink"
+          entrypoint: "server/entry.mjs" # 📝 Update the entrypoint if necessary
+          root: "dist" # 📝 Update the root if necessary
