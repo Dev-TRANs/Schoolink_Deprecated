@@ -1,0 +1,14 @@
+---
+import Footer from '../components/page/Footer.astro'
+import Header from '../components/page/Header.astro'
+import BaseLayout, { type Props as BaseProps } from './BaseLayout.astro'
+
+export interface Props extends BaseProps {
+
+}
+---
+<BaseLayout {...Astro.props}>
+  <Header />
+  <slot />
+  <Footer />
+</BaseLayout>

@@ -1,10 +1,58 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import PageLayout from '../layouts/PageLayout.astro'
+
+const posts = [
+  {
+    school: 'Example市立Example中学校',
+    title: 'Google Formで毎日の体温チェックをする方法を教えて！',
+    body: '最近私たちの学校ではインフルエンザが流行しています。そのため、体温を紙に書いて提出していますが、負担がとても大きいです。それを回避するために、Google Formsを用いた体温管理をしたいのですが、詳しい生徒会さんはいませんか？',
+    id: crypto.randomUUID()
+  },
+  {
+    school: 'Example高等学校',
+    title: '文化祭の資金どうしてます？',
+    body: '文化祭の資金ってどうしていますか？文化祭を生徒会主催で初めて開催することになったのですが、よくわかりません。',
+    id: crypto.randomUUID()
+  },
+  {
+    school: 'Schoolink市立テスト学校',
+    title: 'テストをなくすには？',
+    body: '定期テストをなくすにはどうすればよいですか？生徒会主催のテロも考えていますが、現実性は薄いです。',
+    id: crypto.randomUUID()
+  }
+]
 ---
 
-<Layout title="Schoolink">
+<PageLayout title="Home | Schoolink">
   <main>
-    <div class="text-2xl">Schoolink</div>
-    <div>By TRANs</div>
+    <div class="bg-blue-50 my-2">
+      <div class="py-5 px-4">
+        <div class="text-2xl font-bold">
+          学校間の<br class='block sm:hidden' />コミュニケーションを
+        </div>
+        <div class='text-slate-500'>
+          Schoolinkは、生徒会間のコミュニケーションを支援するアプリです。<br =>
+          生徒会活動振興会の支援のもと、生徒会情報機構が運営/開発をしています。
+        </div>
+      </div>
+    </div>
+    <div class="px-2">
+      <div class="text-xl my-2">最新の投稿</div>
+      <div class='px-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2'>
+        {
+          posts.map(post => {
+            return <div class='border rounded-md p-2'>
+              <div class='text-lg font-bold'>{ post.title }</div>
+              <div class="text-slate-600 text-sm pl-2">from { post.school }</div>
+              <hr class="my-1"/>
+              <div class="text-slate-600 text-sm pl-2">{ post.body.slice(0, 42) }...</div>
+              <div class="underline hover:no-underline text-right px-3">
+                <a href={`/posts/${post.id}`}>Show More →</a>
+              </div>
+            </div>
+          })
+        }
+      </div>
+    </div>
   </main>
-</Layout>
+</PageLayout>
