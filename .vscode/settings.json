@@ -1,6 +1,9 @@
 {
-    "[astro]": {
-        "editor.tabSize": 2,
-        "editor.insertSpaces": true
-    }
+  "[astro]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[typescript]": {
+    "editor.tabSize": 2
+  }
 }
