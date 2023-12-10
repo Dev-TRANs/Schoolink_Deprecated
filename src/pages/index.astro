@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro'
 
+import { Posts } from '../islands/posts'
 const posts = [
   {
     school: 'Example市立Example中学校',
@@ -38,21 +39,7 @@ const posts = [
     </div>
     <div class="px-2">
       <div class="text-xl my-2">最新の投稿</div>
-      <div class='px-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2'>
-        {
-          posts.map(post => {
-            return <div class='border rounded-md p-2'>
-              <div class='text-lg font-bold'>{ post.title }</div>
-              <div class="text-slate-600 text-sm pl-2">from { post.school }</div>
-              <hr class="my-1"/>
-              <div class="text-slate-600 text-sm pl-2">{ post.body.slice(0, 42) }...</div>
-              <div class="underline hover:no-underline text-right px-3">
-                <a href={`/posts/${post.id}`}>Show More →</a>
-              </div>
-            </div>
-          })
-        }
-      </div>
+      <Posts client:load/>
     </div>
     <div class="p-4">
       <div class="text-2xl">How to join?</div>
