@@ -31,17 +31,17 @@ export default () => {
         }
 
     })
-    return <div>
-        <div>投稿を作成する</div>
+    return <div class="mx-5">
+        <div class="text-2xl">投稿を作成する</div>
         <div>
             <div>
-                <input placeholder="Title" onInput={e => setTitle(e.target.value)}/>
+                <input class="border p-1" placeholder="Title" onInput={e => setTitle(e.target.value)}/>
+            </div>
+            <div class="my-2">
+                <textarea class="border p-1 w-full" onInput={e => setDescription(e.target.value)} placeholder="ここに内容を入力" />
             </div>
             <div>
-                <textarea onInput={e => setDescription(e.target.value)} placeholder="ここに内容を入力" />
-            </div>
-            <div>
-                <button onClick={submit}>依頼を作成！</button>
+                <button onClick={submit} class="rounded-lg bg-blue-200 p-2 hover:bg-blue-300">依頼を作成！</button>
             </div>
         </div>
     </div>
