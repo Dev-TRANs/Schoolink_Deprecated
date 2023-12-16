@@ -9,7 +9,8 @@ export const Header = () => {
   });
   return (
     <div class="flex items-center justify-between px-2 py-3">
-      <div class="font-bold font-mono text-xl">Schoolink</div>
+      <div class="font-bold font-mono text-xl">
+        <a href="/">Schoolink</a></div>
       <div>
         {!sessionData().session ? (
           <a href="/login" class="p-2 rounded bg-blue-500 text-white font-bold">

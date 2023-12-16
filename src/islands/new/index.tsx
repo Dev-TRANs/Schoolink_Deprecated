@@ -7,14 +7,21 @@ export default () => {
     const [description, setDescription] = createSignal('')
 
     const submit = async () => {
-        console.log('r')
+        if (title().length === 0) {
+            return alert('タイトルを空にはできません')
+        }
+        if (description().length < 50) {
+            return alert('内容は50文字以上でお願いします')
+        }
+        if (!confirm('内容を確定して送信しますか？')) {
+            return
+        }
         const result = await supabase.from('posts').insert([
             {
                 title: title(),
                 text: description()
             }
         ])
-        console.log(result)
     }
     onMount(async () => {
         const session = await supabase.auth.getSession()

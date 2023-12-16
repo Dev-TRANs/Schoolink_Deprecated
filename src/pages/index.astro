@@ -1,7 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro'
-
-import { Posts } from '../islands/posts'
+import { Posts } from '../islands/posts';
 const posts = [
   {
     school: 'Example市立Example中学校',
@@ -39,7 +38,8 @@ const posts = [
     </div>
     <div class="px-2">
       <div class="text-xl my-2">最新の投稿</div>
-      <Posts client:load/>
+      <Posts client:load n={3} />
+      <div><a href="/posts">もっと見る</a></div>
     </div>
     <div class="p-4">
       <div class="text-2xl">How to join?</div>
