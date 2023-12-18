@@ -1,5 +1,5 @@
 import { createSignal, onMount } from "solid-js";
-import { supabase } from "../../utils/supabase";
+import { supabase } from "@/utils/supabase";
 
 export const Profile = () => {
   const [userData, setUserData] = createSignal<{

@@ -1,4 +1,4 @@
-import { supabase } from "../../utils/supabase";
+import { supabase } from "@/utils/supabase";
 import { createSignal, onMount } from "solid-js";
 
 export const Login = () => {
