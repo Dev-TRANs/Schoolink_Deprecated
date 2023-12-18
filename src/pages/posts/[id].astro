@@ -3,6 +3,6 @@ import PageLayout from '../../layouts/PageLayout.astro'
 
 import { PostPage } from '../../islands/postpage'
 ---
-<PageLayout title="Post | Schoolink">
+<PageLayout title="Post">
   <PostPage id={parseInt(Astro.params.id || '0')} client:load />
 </PageLayout>
