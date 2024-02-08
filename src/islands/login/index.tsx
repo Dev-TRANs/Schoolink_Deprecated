@@ -11,6 +11,9 @@ export const Login = () => {
       password: password(),
     });
     console.log(data, error);
+    if (data.session) {
+      location.href = "/";
+    }
   };
   onMount(async () => {
     const { data } = await supabase.auth.getSession();
