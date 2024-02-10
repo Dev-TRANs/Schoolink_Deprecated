@@ -75,9 +75,8 @@ export const PostPage = (props: {
           <div class="text-2xl">{ postData.title }</div>
           <hr />
           <div class="">{ postData.text }</div>
-          <div class="text-right">
-            <span class="text-xl">By {user()?.name}</span>
-            <span>@{user()?.school}</span>
+          <div class="text-right text-lg">
+            by <span class="font-bold">{user()?.name}</span> @{user()?.school} 
           </div>
         </div>
       })()
@@ -126,9 +125,7 @@ export const PostPage = (props: {
       <div>
         <For each={answers()}>{answer => (<div class="border p-2 rounded-lg">
           <div class="">
-            <span class="text-2xl">{answer.user.name}</span>
-            <span> @</span>
-            <span class="text-base">{answer.user.school}</span>
+            <span class="font-bold">{answer.user.name}</span> @{answer.user.school} 
           </div>
           <div>
             { answer.body }
